@@ -1,4 +1,4 @@
-##Image Library
+## Image Library
 
 To run the project please install grunt:
 
