@@ -13,10 +13,9 @@ const images = [
   document.addEventListener("DOMContentLoaded", function() {
     createGrid();
     
-    const lazyElements = document.querySelectorAll(".checkbox-image");
+    const checkboxImage = document.querySelectorAll(".checkbox-image");
 
     const lazyLoad = function(target) {
-      console.log('lazy load!', target);
       const io = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -40,7 +39,7 @@ const images = [
       });
     };
 
-    lazyLoad(lazyElements);
+    lazyLoad(checkboxImage);
 });
 
 
@@ -56,7 +55,6 @@ const images = [
 
       const checkboxLabel = document.createElement('label');
       checkboxLabel.classList.add('checkbox-image', 'mx-auto');
-      // checkboxLabel.style.backgroundImage = `url(${imageUrl})`;
       checkboxLabel.setAttribute('data-src', imageUrl);
       checkboxLabel.setAttribute('for', checkboxId);
 
